@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.utils.text import slugify
 from unidecode import unidecode
 
-from .models import Women
+from .models import Women, Category
 
 menu = [{'title': "О сайте", 'url_name': 'about'},
         {'title': "Добавить статью", 'url_name': 'add_page'},
@@ -13,7 +13,7 @@ menu = [{'title': "О сайте", 'url_name': 'about'},
         {'title': "Войти", 'url_name': 'login'}
         ]
 
-cats_db = [
+cats_db_bak = [
     {'id': 1, 'name': 'Актрисы'},
     {'id': 2, 'name': 'Певицы'},
     {'id': 3, 'name': 'Спортсменки'},
@@ -25,7 +25,7 @@ def index(request: HttpRequest) -> HttpResponse:
     data = {
         'title': 'Главная страница',
         'menu': menu,
-        'posts': Women.objects.filter(is_published=True),
+        'posts': Women.published.all(),
         'cat_selected': 0,
     }
     return render(request, 'women/index.html', context=data)
@@ -85,10 +85,13 @@ def login(request: HttpRequest) -> HttpResponse:
     return render(request, 'women/login.html', context=data)
 
 
-def show_category(request: HttpRequest, cat_id: int) -> HttpResponse:
+def show_category(request: HttpRequest, cat_slug: str) -> HttpResponse:
+    category = Category.objects.get(slug=cat_slug)
     data = {
-        'title': f'{cats_db[cat_id - 1]["name"]}',
+        'title': f'{category.name}',
         'menu': menu,
-        'cat_selected': cat_id,
+        #'posts': cat.posts.filter(is_published=True),
+        'posts': Women.objects.filter(cat=category, is_published=True),
+        'cat_selected': category.slug,
     }
     return render(request, 'women/show_category.html', context=data)
