@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e72b298-827b-4f38-9e62-7cbbcbf93c24" name="Changes" comment="04-09-2024 вечер">
+    <list default="true" id="1e72b298-827b-4f38-9e62-7cbbcbf93c24" name="Changes" comment="05-09-2024 вечер">
+      <change afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/list_tags.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/list_categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/list_categories.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/show_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/show_category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/show_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/show_post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/templatetags/women_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templatetags/women_tags.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/views.py" afterDir="false" />
@@ -26,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -50,6 +53,7 @@
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;Django Server.djangoBalakirev.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
     &quot;Python.sitewoman debug=False.executor&quot;: &quot;Run&quot;,
     &quot;Python.sitewomen.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
@@ -79,6 +83,9 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.sitewomen">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/djangoBalakirev/sitewomen/women/templates/women/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="sitewoman debug=False" type="PythonConfigurationType" factoryName="Python">
       <module name="djangoBalakirev" />
       <option name="ENV_FILES" value="" />
@@ -128,9 +135,15 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Python.sitewomen" />
       <item itemvalue="Python.sitewoman debug=False" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -159,7 +172,8 @@
       <workItem from="1725432976898" duration="14632000" />
       <workItem from="1725453920112" duration="2634000" />
       <workItem from="1725519977776" duration="3755000" />
-      <workItem from="1725530719634" duration="12129000" />
+      <workItem from="1725530719634" duration="20723000" />
+      <workItem from="1725621845392" duration="3784000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />
@@ -193,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725456546006</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="05-09-2024 вечер">
+      <option name="closed" value="true" />
+      <created>1725544961576</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1725544961576</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,10 +237,11 @@
     <MESSAGE value="28.08.2024 вечер" />
     <MESSAGE value="04-09-2024 утро" />
     <MESSAGE value="04-09-2024 вечер" />
-    <option name="LAST_COMMIT_MESSAGE" value="04-09-2024 вечер" />
+    <MESSAGE value="05-09-2024 вечер" />
+    <option name="LAST_COMMIT_MESSAGE" value="05-09-2024 вечер" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/djangoBalakirev$sitewomen.coverage" NAME="sitewomen Coverage Results" MODIFIED="1725535180657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
+    <SUITE FILE_PATH="coverage/djangoBalakirev$sitewomen.coverage" NAME="sitewomen Coverage Results" MODIFIED="1725621856349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
     <SUITE FILE_PATH="coverage/djangoBalakirev$sitewoman_debug_False.coverage" NAME="sitewoman debug=False Coverage Results" MODIFIED="1725440329408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
   </component>
 </project>
