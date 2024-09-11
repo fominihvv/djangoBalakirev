@@ -35,6 +35,7 @@ class Category(models.Model):
 class Husband(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField(null=True)
+    m_count = models.IntegerField(default=0, blank=True)
 
     def __str__(self) -> str:
         return self.name
@@ -58,8 +59,8 @@ class Women(models.Model):
     time_update = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(choices=Status.choices, default=Status.DRAFT)
     cat = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='posts')
-    tags = models.ManyToManyField(TagPost, blank=True, related_name='tags')
-    husband = models.OneToOneField(Husband, on_delete=models.SET_NULL, null=True, blank=True, related_name='wumen')
+    tags = models.ManyToManyField(TagPost, blank=True, related_name='womens')
+    husband = models.OneToOneField(Husband, on_delete=models.SET_NULL, null=True, blank=True, related_name='wife')
 
     objects = models.Manager()
     published = PublishedManager()
