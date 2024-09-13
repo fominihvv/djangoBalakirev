@@ -12,9 +12,8 @@ menu = [{'title': "О сайте", 'url_name': 'about'},
         ]
 
 
-
 def index(request: HttpRequest) -> HttpResponse:
-    posts = Women.published.all()
+    posts = Women.published.all().select_related('cat')
     data = {
         'title': 'Главная страница',
         'menu': menu,
@@ -73,7 +72,7 @@ def login(request: HttpRequest) -> HttpResponse:
 
 def show_category(request: HttpRequest, cat_slug: str) -> HttpResponse:
     category = get_object_or_404(Category, slug=cat_slug)
-    posts = Women.published.filter(cat=category)
+    posts = Women.published.filter(cat=category).select_related('cat')
     data = {
         'title': f'Категория: {category.name}',
         'menu': menu,
@@ -85,7 +84,7 @@ def show_category(request: HttpRequest, cat_slug: str) -> HttpResponse:
 
 def show_tag_postlist(request: HttpRequest, tag_slug: str) -> HttpResponse:
     tag = get_object_or_404(TagPost, slug=tag_slug)
-    posts = tag.womens.filter(is_published=Women.Status.PUBLISHED)
+    posts = tag.womens.filter(is_published=Women.Status.PUBLISHED).select_related('cat')
     data = {
         'title': f'Тег: {tag.womens}',
         'menu': menu,

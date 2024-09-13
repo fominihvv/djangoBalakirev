@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e72b298-827b-4f38-9e62-7cbbcbf93c24" name="Changes" comment="06-09-2024 вечер">
+    <list default="true" id="1e72b298-827b-4f38-9e62-7cbbcbf93c24" name="Changes" comment="11-09-2024 вечер">
+      <change beforePath="$PROJECT_DIR$/.idea/djangoBalakirev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djangoBalakirev.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/sitewomen/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/sitewomen/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/sitewomen/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/sitewomen/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/women/templatetags/women_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templatetags/women_tags.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +94,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (.venv)" />
+      <option name="SDK_NAME" value="Python 3.12 (djangoBalakirev)" />
       <option name="WORKING_DIRECTORY" value="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -113,7 +118,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (.venv)" />
+      <option name="SDK_NAME" value="Python 3.12 (djangoBalakirev)" />
       <option name="WORKING_DIRECTORY" value="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -170,7 +175,11 @@
       <workItem from="1725621845392" duration="3833000" />
       <workItem from="1725867592406" duration="7091000" />
       <workItem from="1725957055470" duration="5602000" />
-      <workItem from="1726040551007" duration="10092000" />
+      <workItem from="1726040551007" duration="10123000" />
+      <workItem from="1726123395171" duration="1269000" />
+      <workItem from="1726124763723" duration="101000" />
+      <workItem from="1726124879904" duration="9348000" />
+      <workItem from="1726208097931" duration="796000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />
@@ -220,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725626232000</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="11-09-2024 вечер">
+      <option name="closed" value="true" />
+      <created>1726057352768</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726057352768</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,10 +261,11 @@
     <MESSAGE value="04-09-2024 вечер" />
     <MESSAGE value="05-09-2024 вечер" />
     <MESSAGE value="06-09-2024 вечер" />
-    <option name="LAST_COMMIT_MESSAGE" value="06-09-2024 вечер" />
+    <MESSAGE value="11-09-2024 вечер" />
+    <option name="LAST_COMMIT_MESSAGE" value="11-09-2024 вечер" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/djangoBalakirev$sitewomen.coverage" NAME="sitewomen Coverage Results" MODIFIED="1726051794024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
+    <SUITE FILE_PATH="coverage/djangoBalakirev$sitewomen.coverage" NAME="sitewomen Coverage Results" MODIFIED="1726128488711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
     <SUITE FILE_PATH="coverage/djangoBalakirev$sitewoman_debug_False.coverage" NAME="sitewoman debug=False Coverage Results" MODIFIED="1725440329408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
   </component>
 </project>
