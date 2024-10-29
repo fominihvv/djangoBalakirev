@@ -1,5 +1,7 @@
 from django.db import models
 from django.shortcuts import reverse
+from django_extensions.db.fields import AutoSlugField
+from slugify import slugify
 
 
 # from autoslug import AutoSlugField
@@ -67,7 +69,9 @@ class Women(models.Model):
         PUBLISHED = 1, 'Опубликовано'
 
     title = models.CharField(max_length=255, verbose_name='Заголовок')
-    slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name='Слаг')
+    slug = AutoSlugField(populate_from='title', slugify_function=slugify, max_length=255, unique=True, db_index=True,
+                         verbose_name='Слаг')
+    photo = models.ImageField(upload_to='photos/%Y/%m/%d/', default=None, blank=True, verbose_name='Фото', null=True)
     content = models.TextField(blank=True, verbose_name='Текст статьи')
     time_create = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     time_update = models.DateTimeField(auto_now=True, verbose_name='Дата последнего изменения')
@@ -78,6 +82,7 @@ class Women(models.Model):
     husband = models.OneToOneField(Husband, on_delete=models.SET_NULL, null=True, blank=True, related_name='wife',
                                    verbose_name='Муж')
 
+
     objects = models.Manager()
     published = PublishedManager()
 
@@ -86,3 +91,10 @@ class Women(models.Model):
 
     def get_absolute_url(self) -> str:
         return reverse('post', kwargs={'post_slug': self.slug})
+
+
+
+class UploadFiles(models.Model):
+    file = models.FileField(upload_to='uploads_model/', verbose_name='Файл')
+
+
