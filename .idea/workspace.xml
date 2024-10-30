@@ -4,23 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e72b298-827b-4f38-9e62-7cbbcbf93c24" name="Changes" comment="13-09-2024 утро">
-      <change afterPath="$PROJECT_DIR$/requirements" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sitewomen/static/css/admin/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sitewomen/templates/admin/base_site.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sitewomen/women/forms.py" afterDir="false" />
+    <list default="true" id="1e72b298-827b-4f38-9e62-7cbbcbf93c24" name="Changes" comment="29-10-2024 12:26:00.0000000&#10;окончание разработки с помощью функций представления и переход на классы Django">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoBalakirev/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoBalakirev/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/sitewomen/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/sitewomen/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/sitewomen/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/sitewomen/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/women/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/women/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/addpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/addpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/show_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/show_category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/list_categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/list_categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -66,27 +60,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.djangoBalakirev.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sitewoman debug=False.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sitewomen.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/fominyh_vv/PycharmProjects/djangoBalakirev/sitewomen/women/templates/women&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.djangoBalakirev.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "Python.sitewoman debug=False.executor": "Run",
+    "Python.sitewomen.executor": "Debug",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "ООП-ветка",
+    "last_opened_file_path": "C:/Users/fominyh_vv/PycharmProjects/djangoBalakirev/sitewomen/women/templates/women",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen\women\templates\women" />
@@ -218,7 +212,7 @@
       <workItem from="1730099663865" duration="7367000" />
       <workItem from="1730119445462" duration="291000" />
       <workItem from="1730119764571" duration="2726000" />
-      <workItem from="1730188460816" duration="5965000" />
+      <workItem from="1730188460816" duration="18184000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />
@@ -284,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726209142531</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="29-10-2024 12:26:00.0000000&#10;окончание разработки с помощью функций представления и переход на классы Django">
+      <option name="closed" value="true" />
+      <created>1730199323855</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1730199323855</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +297,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="ООП-ветка" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -310,7 +324,8 @@
     <MESSAGE value="06-09-2024 вечер" />
     <MESSAGE value="11-09-2024 вечер" />
     <MESSAGE value="13-09-2024 утро" />
-    <option name="LAST_COMMIT_MESSAGE" value="13-09-2024 утро" />
+    <MESSAGE value="29-10-2024 12:26:00.0000000&#10;окончание разработки с помощью функций представления и переход на классы Django" />
+    <option name="LAST_COMMIT_MESSAGE" value="29-10-2024 12:26:00.0000000&#10;окончание разработки с помощью функций представления и переход на классы Django" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -325,6 +340,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/djangoBalakirev$sitewomen.coverage" NAME="sitewomen Coverage Results" MODIFIED="1729671552271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
-    <SUITE FILE_PATH="coverage/djangoBalakirev$sitewoman_debug_False.coverage" NAME="sitewoman debug=False Coverage Results" MODIFIED="1730196434253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
+    <SUITE FILE_PATH="coverage/djangoBalakirev$sitewoman_debug_False.coverage" NAME="sitewoman debug=False Coverage Results" MODIFIED="1730208629698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
   </component>
 </project>

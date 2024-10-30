@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 # sitewomen\women\views.py
-import os
-import uuid
 
 from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views import View
+from django.views.generic import TemplateView
 
-from .forms import AddPostForm, UploadFileForm
-from .models import Women, Category, TagPost, UploadFiles
+from .forms import AddPostForm
+from .models import Women, Category, TagPost
 
 menu = [{'title': "О сайте", 'url_name': 'about'},
         {'title': "Добавить статью", 'url_name': 'add_page'},
@@ -34,23 +34,13 @@ def index(request: HttpRequest) -> HttpResponse:
             destination.write(chunk)"""
 
 
-def about(request: HttpRequest) -> HttpResponse:
-    match request.method:
-        case 'GET':
-            form = UploadFileForm()
-        case 'POST':
-            form = UploadFileForm(request.POST, request.FILES)
-            if form.is_valid():
-                #handle_uploaded_file(form.cleaned_data['file'])
-                fp = UploadFiles(file=form.cleaned_data['file'])
-                fp.save()
+"""def about(request: HttpRequest) -> HttpResponse:
     data = {
         'title': 'О сайте',
         'menu': menu,
         'cat_selected': 0,
-        'form': form
     }
-    return render(request, 'women/about.html', context=data)
+    return render(request, 'women/about.html', context=data)"""
 
 
 def show_post(request: HttpRequest, post_slug: str) -> HttpResponse:
@@ -62,26 +52,6 @@ def show_post(request: HttpRequest, post_slug: str) -> HttpResponse:
         'cat_selected': 0,
     }
     return render(request, 'women/show_post.html', context=data)
-
-
-def addpage(request: HttpRequest) -> HttpResponse:
-    match request.method:
-        case 'GET':
-            form = AddPostForm()
-        case 'POST':
-            form = AddPostForm(request.POST, request.FILES)
-            if form.is_valid():
-                form.save()
-                return redirect('home')
-        case _:
-            return redirect('home')
-    data = {
-        'title': 'Добавление статьи',
-        'menu': menu,
-        'cat_selected': 0,
-        'form': form
-    }
-    return render(request, 'women/addpage.html', context=data)
 
 
 def contact(request: HttpRequest) -> HttpResponse:
@@ -104,14 +74,14 @@ def login(request: HttpRequest) -> HttpResponse:
 
 def show_category(request: HttpRequest, cat_slug: str) -> HttpResponse:
     category = get_object_or_404(Category, slug=cat_slug)
-    posts = Women.published.filter(cat=category).select_related('cat')
+    posts = Women.published.filter(cat_id=category.pk).select_related('cat')
     data = {
         'title': f'Категория: {category.name}',
         'menu': menu,
         'posts': posts,
-        'cat_selected': category.slug,
+        'cat_selected': category.pk,
     }
-    return render(request, 'women/show_category.html', context=data)
+    return render(request, 'women/index.html', context=data)
 
 
 def show_tag_postlist(request: HttpRequest, tag_slug: str) -> HttpResponse:
@@ -126,4 +96,40 @@ def show_tag_postlist(request: HttpRequest, tag_slug: str) -> HttpResponse:
     return render(request, 'women/index.html', context=data)
 
 
+class AddPage(View):
+    data = {
+        'title': 'Добавление статьи',
+        'menu': menu,
+        'cat_selected': 0,
+    }
 
+    def get(self, request: HttpRequest) -> HttpResponse:
+        self.data['form'] = AddPostForm()
+        return render(request, 'women/addpage.html', context=self.data)
+
+    def post(self, request: HttpRequest) -> HttpResponse:
+        form = AddPostForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+        self.data['form'] = form
+        return render(request, 'women/addpage.html', context=self.data)
+
+
+class WomenHome(TemplateView):
+    template_name = 'women/index.html'
+    extra_context = {
+        'title': 'Главная страница',
+        'menu': menu,
+        'posts': Women.published.all().select_related('cat'),
+        'cat_selected': 0,
+    }
+
+
+class AboutView(TemplateView):
+    template_name = 'women/about.html'
+    extra_context = {
+        'title': 'О сайте',
+        'menu': menu,
+        'cat_selected': 0,
+    }
