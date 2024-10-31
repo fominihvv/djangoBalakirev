@@ -12,7 +12,7 @@ from .forms import AddPostForm
 from .models import Women, TagPost, Category
 
 menu = [{'title': "О сайте", 'url_name': 'about'},
-        {'title': "Добавить статью", 'url_name': 'add_page'},
+        {'title': "Добавить статью", 'url_name': 'add_post'},
         {'title': "Обратная связь", 'url_name': 'contact'},
         {'title': "Войти", 'url_name': 'login'}
         ]
@@ -23,17 +23,7 @@ default_context: dict[str, Any] = {
 }
 
 
-class AddPost(FormView):
-    template_name = 'women/add_post.html'
-    form_class = AddPostForm
-    # success_url = reverse_lazy('home')
-    extra_context = default_context.copy()
-    extra_context['title'] = 'Добавление статьи'
 
-    def form_valid(self, form: AddPostForm) -> HttpResponse:
-        form.save()
-        return redirect('home')
-        # return super().form_valid(form)
 
 
 class WomenHome(ListView):
@@ -116,12 +106,24 @@ class WomenTags(ListView):
         return context
 
 
-class CreatePost(CreateView):
+class AddPost(CreateView):
     template_name = 'women/add_post.html'
     form_class = AddPostForm
     success_url = reverse_lazy('home')  # Если не указывать, то идёт редирект на саму статью используя get_absolute_url
     extra_context = default_context.copy()
     extra_context['title'] = 'Добавление статьи'
+
+"""class AddPost(FormView):
+    template_name = 'women/add_post.html'
+    form_class = AddPostForm
+    # success_url = reverse_lazy('home')
+    extra_context = default_context.copy()
+    extra_context['title'] = 'Добавление статьи'
+
+    def form_valid(self, form: AddPostForm) -> HttpResponse:
+        form.save()
+        return redirect('home')
+        # return super().form_valid(form)"""
 
 
 class DeletePost(DeleteView):
@@ -140,3 +142,11 @@ class UpdatePost(UpdateView):
     success_url = reverse_lazy('home')  # Если не указывать, то идёт редирект на саму статью используя get_absolute_url
     extra_context = default_context.copy()
     extra_context['title'] = 'Редактирование статьи'
+
+
+
+
+
+
+
+
