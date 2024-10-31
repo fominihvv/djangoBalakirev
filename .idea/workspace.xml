@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e72b298-827b-4f38-9e62-7cbbcbf93c24" name="Changes" comment="29-10-2024 12:26:00.0000000&#10;окончание разработки с помощью функций представления и переход на классы Django">
+    <list default="true" id="1e72b298-827b-4f38-9e62-7cbbcbf93c24" name="Changes" comment="30.10.2024 10:31&#10;Перевод проекта на классы представлений Django">
+      <change afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/delete_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/djangoBalakirev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djangoBalakirev.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/list_categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/list_categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/templates/base.html.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/addpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/add_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/index.html.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/templatetags/women_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templatetags/women_tags.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/views.py" afterDir="false" />
     </list>
@@ -23,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -70,6 +75,7 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.codeium.enabled": "true",
+    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "ООП-ветка",
     "last_opened_file_path": "C:/Users/fominyh_vv/PycharmProjects/djangoBalakirev/sitewomen/women/templates/women",
     "node.js.detected.package.eslint": "true",
@@ -86,9 +92,9 @@
       <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen\women\templates\women" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen\women\templates\women" />
       <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen\women" />
       <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen\sitewomen" />
-      <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen\women\templates\women" />
       <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
       <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\templates" />
     </key>
@@ -212,7 +218,7 @@
       <workItem from="1730099663865" duration="7367000" />
       <workItem from="1730119445462" duration="291000" />
       <workItem from="1730119764571" duration="2726000" />
-      <workItem from="1730188460816" duration="18184000" />
+      <workItem from="1730188460816" duration="52194000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />
@@ -286,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730199323855</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="30.10.2024 10:31&#10;Перевод проекта на классы представлений Django">
+      <option name="closed" value="true" />
+      <created>1730273535680</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1730273535680</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +339,8 @@
     <MESSAGE value="11-09-2024 вечер" />
     <MESSAGE value="13-09-2024 утро" />
     <MESSAGE value="29-10-2024 12:26:00.0000000&#10;окончание разработки с помощью функций представления и переход на классы Django" />
-    <option name="LAST_COMMIT_MESSAGE" value="29-10-2024 12:26:00.0000000&#10;окончание разработки с помощью функций представления и переход на классы Django" />
+    <MESSAGE value="30.10.2024 10:31&#10;Перевод проекта на классы представлений Django" />
+    <option name="LAST_COMMIT_MESSAGE" value="30.10.2024 10:31&#10;Перевод проекта на классы представлений Django" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -340,6 +355,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/djangoBalakirev$sitewomen.coverage" NAME="sitewomen Coverage Results" MODIFIED="1729671552271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
-    <SUITE FILE_PATH="coverage/djangoBalakirev$sitewoman_debug_False.coverage" NAME="sitewoman debug=False Coverage Results" MODIFIED="1730208629698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
+    <SUITE FILE_PATH="coverage/djangoBalakirev$sitewoman_debug_False.coverage" NAME="sitewoman debug=False Coverage Results" MODIFIED="1730379453388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
   </component>
 </project>
