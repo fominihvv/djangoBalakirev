@@ -38,9 +38,9 @@ class AddPostForm(forms.ModelForm):
         # }
 
     def clean_title(self):
-        ALLOWED_CHARACTERS = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ123456789- "
+        allowed_characters = "абвгдеёжзий̆клмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ123456789- "
         title = self.cleaned_data['title']
-        if not (set(title) <= set(ALLOWED_CHARACTERS)):
+        if not set(title).issubset(set(allowed_characters)):
             raise forms.ValidationError('Должны присутствовать только русские буквы, цифры, дефис и пробел. V2')
         return title
 
