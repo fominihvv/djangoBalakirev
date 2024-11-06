@@ -50,7 +50,7 @@
                             </li>
                             <li>
                                 <!-- Теги -->
-                                {%  show_all_tags %}
+                                {% show_all_tags %}
                             </li>
                         </ul>
                     </td>
@@ -66,6 +66,12 @@
                             {% endblock %}
                         </div>
                         <!-- Конец блока контента -->
+
+                        <!-- Навигация -->
+                        {% block navigation %}
+
+                        {% endblock %}
+                        <!-- Конец навигации -->
 
                     </td>
                 </tr>

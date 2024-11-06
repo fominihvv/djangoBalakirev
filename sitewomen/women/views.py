@@ -3,63 +3,30 @@
 from typing import Any
 
 from django.db.models import QuerySet
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, ListView, DetailView, FormView, CreateView, DeleteView, UpdateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, DeleteView, UpdateView
 
 from .forms import AddPostForm
 from .models import Women, TagPost, Category
-
-menu = [{'title': "О сайте", 'url_name': 'about'},
-        {'title': "Добавить статью", 'url_name': 'add_post'},
-        {'title': "Обратная связь", 'url_name': 'contact'},
-        {'title': "Войти", 'url_name': 'login'}
-        ]
-
-default_context: dict[str, Any] = {
-    'menu': menu,
-    'cat_selected': None,
-}
+from .utils import DataMixin
 
 
-
-
-
-class WomenHome(ListView):
-    # model = Women #Не использовать этот способ, если определен get_queryset
+class WomenHome(DataMixin, ListView):
     template_name = 'women/index.html'
     context_object_name = 'posts'
-    extra_context = default_context.copy()
-    extra_context['title'] = 'Главная страница'
-    extra_context['cat_selected'] = 0
 
     def get_queryset(self) -> QuerySet:
         return Women.published.all().select_related('cat')
 
-
-class AboutView(TemplateView):
-    template_name = 'women/about.html'
-    extra_context = default_context.copy()
-    extra_context['title'] = 'О сайте'
+    def get_context_data(self, **kwargs) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        return self.get_mixin_context(context, title='Главная страница', cat_selected=0)
 
 
-class ContactView(TemplateView):
-    template_name = "women/contact.html"
-    extra_context = default_context.copy()
-    extra_context['title'] = "Обратная связь"
-
-
-class LoginView(TemplateView):
-    template_name = 'women/login.html'
-    extra_context = default_context.copy()
-    extra_context['title'] = 'Авторизация'
-
-
-class ShowPost(DetailView):
+class ShowPost(DataMixin, DetailView):
     # model = Women #Не использовать этот способ, если определен get_queryset
     template_name = 'women/show_post.html'
-    extra_context = default_context.copy()
     slug_url_kwarg = 'post_slug'
     context_object_name = 'post'
 
@@ -71,14 +38,12 @@ class ShowPost(DetailView):
 
     def get_context_data(self, **kwargs) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        context['title'] = context['post'].title
-        return context
+        return self.get_mixin_context(context, title=context['post'].title)
 
 
-class WomenCategory(ListView):
+class WomenCategory(DataMixin, ListView):
     template_name = 'women/index.html'
     context_object_name = 'posts'
-    extra_context = default_context.copy()
 
     def get_queryset(self) -> QuerySet:
         return Women.published.filter(cat__slug=self.kwargs['cat_slug']).select_related('cat')
@@ -86,15 +51,12 @@ class WomenCategory(ListView):
     def get_context_data(self, **kwargs) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         category = get_object_or_404(Category, slug=self.kwargs['cat_slug'])
-        context['title'] = 'Категория: ' + category.name
-        context['cat_selected'] = category.pk
-        return context
+        return self.get_mixin_context(context, cat_selected=category.pk, title='Категория: ' + category.name)
 
 
-class WomenTags(ListView):
+class WomenTags(DataMixin, ListView):
     template_name = 'women/index.html'
     context_object_name = 'posts'
-    extra_context = default_context.copy()
 
     def get_queryset(self) -> QuerySet:
         return Women.published.filter(tags__slug=self.kwargs['tag_slug']).select_related('cat')
@@ -102,51 +64,62 @@ class WomenTags(ListView):
     def get_context_data(self, **kwargs) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         tag = get_object_or_404(TagPost, slug=self.kwargs['tag_slug'])
-        context['title'] = 'Тег: ' + tag.tag
-        return context
+        return self.get_mixin_context(context, title='Тег: ' + tag.tag)
 
 
-class AddPost(CreateView):
+class AddPost(DataMixin, CreateView):
     template_name = 'women/add_post.html'
     form_class = AddPostForm
     success_url = reverse_lazy('home')  # Если не указывать, то идёт редирект на саму статью используя get_absolute_url
-    extra_context = default_context.copy()
-    extra_context['title'] = 'Добавление статьи'
 
-"""class AddPost(FormView):
-    template_name = 'women/add_post.html'
-    form_class = AddPostForm
-    # success_url = reverse_lazy('home')
-    extra_context = default_context.copy()
-    extra_context['title'] = 'Добавление статьи'
-
-    def form_valid(self, form: AddPostForm) -> HttpResponse:
-        form.save()
-        return redirect('home')
-        # return super().form_valid(form)"""
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return self.get_mixin_context(context, title_page='Добавление статьи')
 
 
-class DeletePost(DeleteView):
+class DeletePost(DataMixin, DeleteView):
     model = Women
     template_name = 'women/delete_post.html'
     context_object_name = 'post'
     success_url = reverse_lazy('home')
-    extra_context = default_context.copy()
-    extra_context['title'] = 'Удаление статьи'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return self.get_mixin_context(context, title_page='Удаление статьи')
 
 
-class UpdatePost(UpdateView):
+class UpdatePost(DataMixin, UpdateView):
     model = Women
     fields = ['title', 'content', 'photo', 'is_published', 'cat']
     template_name = 'women/add_post.html'
     success_url = reverse_lazy('home')  # Если не указывать, то идёт редирект на саму статью используя get_absolute_url
-    extra_context = default_context.copy()
-    extra_context['title'] = 'Редактирование статьи'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return self.get_mixin_context(context, title_page='Редактирование статьи')
 
 
+class AboutView(DataMixin, TemplateView):
+    template_name = 'women/about.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return self.get_mixin_context(context, title_page='О сайте')
 
 
+class ContactView(DataMixin, TemplateView):
+    template_name = "women/contact.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return self.get_mixin_context(context, title_page='Обратная связь')
 
 
+class LoginView(DataMixin, TemplateView):
+    template_name = 'women/login.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return self.get_mixin_context(context, title_page='Авторизация')
 
 
