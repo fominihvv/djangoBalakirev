@@ -5,6 +5,9 @@ from women.models import Category, TagPost
 
 register = template.Library()
 
+
+
+
 @register.inclusion_tag('women/list_categories.html')
 def show_categories(cat_selected=0):
     cats = Category.objects.annotate(total=Count('posts', filter=Q(posts__is_published=True))).filter(total__gt=0)

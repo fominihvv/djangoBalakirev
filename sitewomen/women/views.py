@@ -3,6 +3,7 @@
 from typing import Any
 
 from django.db.models import QuerySet
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, DeleteView, UpdateView
@@ -115,11 +116,14 @@ class ContactView(DataMixin, TemplateView):
         return self.get_mixin_context(context, title_page='Обратная связь')
 
 
-class LoginView(DataMixin, TemplateView):
-    template_name = 'women/login.html'
+def test(request):
+    w = Women.objects.all()[0]
+    if w.husband:
+        print(w.husband.name)
+        return HttpResponse(w.husband.name)
+    else:
+        print(f'{w}, No husband')
+        return HttpResponse(f'{w}, No husband')
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return self.get_mixin_context(context, title_page='Авторизация')
 
 

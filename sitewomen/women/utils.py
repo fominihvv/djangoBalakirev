@@ -1,8 +1,3 @@
-menu = [{'title': "О сайте", 'url_name': 'about'},
-        {'title': "Добавить статью", 'url_name': 'add_post'},
-        {'title': "Обратная связь", 'url_name': 'contact'},
-        {'title': "Войти", 'url_name': 'login'}
-        ]
 
 
 class DataMixin:
@@ -14,5 +9,5 @@ class DataMixin:
         if "paginator" in context and "page_obj" in context:
             context["page_range"] = context["paginator"].get_elided_page_range(context["page_obj"].number,
                                                                                on_each_side=2, on_ends=1)
-        context.update({'menu': menu, **kwargs})
+        context.update({**kwargs})
         return context
