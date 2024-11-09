@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e72b298-827b-4f38-9e62-7cbbcbf93c24" name="Changes" comment="02.11.2024 утро&#10;Перевод проекта на классы View для Django 5.0">
-      <change afterPath="$PROJECT_DIR$/sitewomen/women/utils.py" afterDir="false" />
+    <list default="true" id="1e72b298-827b-4f38-9e62-7cbbcbf93c24" name="Changes" comment="06.11.2024 утро&#10;Добавление авторизации.">
+      <change afterPath="$PROJECT_DIR$/sitewomen/users/context_processors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitewomen/users/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitewomen/users/templates/users/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitewomen/users/templates/users/logout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitewomen/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/djangoBalakirev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djangoBalakirev.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/sitewomen/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/sitewomen/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/sitewomen/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/sitewomen/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/women/static/women/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/static/women/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templates/women/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/templates/women/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/templatetags/women_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/templatetags/women_tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitewomen/women/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitewomen/women/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sitewomen/women/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,11 +98,11 @@
       <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen\women\templates\women" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen\users\templates\users" />
       <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen\women" />
       <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen\women\templates\women" />
       <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen\sitewomen" />
       <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
-      <recent name="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\templates" />
     </key>
   </component>
   <component name="RunManager" selected="Python.sitewoman debug=False">
@@ -217,7 +226,8 @@
       <workItem from="1730119764571" duration="2726000" />
       <workItem from="1730188460816" duration="55715000" />
       <workItem from="1730533444470" duration="4371000" />
-      <workItem from="1730789424545" duration="21529000" />
+      <workItem from="1730789424545" duration="36651000" />
+      <workItem from="1730964304729" duration="13509000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />
@@ -323,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730533579880</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="06.11.2024 утро&#10;Добавление авторизации.">
+      <option name="closed" value="true" />
+      <created>1730875498695</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1730875498695</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +384,8 @@
     <MESSAGE value="31.10.2024 вечер&#10;Перевод проекта на классы View для Django 5.0" />
     <MESSAGE value="Merge remote-tracking branch 'origin/ООП-ветка' into ООП-ветка" />
     <MESSAGE value="02.11.2024 утро&#10;Перевод проекта на классы View для Django 5.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="02.11.2024 утро&#10;Перевод проекта на классы View для Django 5.0" />
+    <MESSAGE value="06.11.2024 утро&#10;Добавление авторизации." />
+    <option name="LAST_COMMIT_MESSAGE" value="06.11.2024 утро&#10;Добавление авторизации." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -381,6 +400,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/djangoBalakirev$sitewomen.coverage" NAME="sitewomen Coverage Results" MODIFIED="1729671552271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
-    <SUITE FILE_PATH="coverage/djangoBalakirev$sitewoman_debug_False.coverage" NAME="sitewoman debug=False Coverage Results" MODIFIED="1730875179613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
+    <SUITE FILE_PATH="coverage/djangoBalakirev$sitewoman_debug_False.coverage" NAME="sitewoman debug=False Coverage Results" MODIFIED="1730985591669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\fominyh_vv\PycharmProjects\djangoBalakirev\sitewomen" />
   </component>
 </project>

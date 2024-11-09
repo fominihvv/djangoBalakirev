@@ -26,6 +26,7 @@
       <list>
         <option value="$MODULE_DIR$/sitewomen/women/templates" />
         <option value="$MODULE_DIR$/sitewomen/templates" />
+        <option value="$MODULE_DIR$/sitewomen/users/templates" />
       </list>
     </option>
   </component>
