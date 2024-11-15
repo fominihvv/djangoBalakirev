@@ -1,9 +1,9 @@
 menu = [{'title': "О сайте", 'url_name': 'about', 'for_all': True, },
         {'title': "Добавить статью", 'url_name': 'add_post', 'for_admin': True},
         {'title': "Обратная связь", 'url_name': 'contact', 'for_all': True},
-        {'title': "Войти", 'url_name': 'users:login', 'title2': "Регистрация", 'url_name2': 'home',
+        {'title': "Войти", 'url_name': 'users:login', 'title2': "Регистрация", 'url_name2': 'users:register',
          'for_anonymous': True},
-        {'title': "", 'title2': "Выйти", 'url_name2': 'users:logout',
+        {'title': "", 'url_name': "users:profile", 'title2': "Выйти", 'url_name2': 'users:logout',
          'for_authorized': True},
         ]
 
@@ -22,5 +22,3 @@ def get_women_context(request):
     if request.user.is_authenticated:
         result_menu[-1]['title'] = f'Добро пожаловать, {request.user.username}'
     return {'mainmenu': result_menu}
-
-
