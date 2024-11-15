@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.shortcuts import reverse
 from django_extensions.db.fields import AutoSlugField
@@ -81,7 +82,8 @@ class Women(models.Model):
     tags = models.ManyToManyField(TagPost, blank=True, related_name='womens', verbose_name='Метки')
     husband = models.OneToOneField(Husband, on_delete=models.SET_NULL, null=True, blank=True, related_name='wife',
                                    verbose_name='Муж')
-
+    author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, related_name='posts', null=True, default=None,
+                               verbose_name='Автор')
 
     objects = models.Manager()
     published = PublishedManager()
@@ -91,6 +93,9 @@ class Women(models.Model):
 
     def get_absolute_url(self) -> str:
         return reverse('post', kwargs={'post_slug': self.slug})
+
+    def get_update_url(self) -> str:
+        return reverse('update_post', kwargs={'pk': self.pk})
 
 
 

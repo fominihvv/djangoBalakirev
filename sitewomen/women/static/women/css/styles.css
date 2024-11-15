@@ -31,7 +31,7 @@ img.img-article-left.thumb {
 	height: auto;
 }
 
-p.link-read-post {
+p.link-read-post{
 	text-align: right;
 }
 p.link-read-post a {
@@ -41,6 +41,18 @@ p.link-read-post a {
 	color: #fff;
 	text-decoration: none;
 }
+
+p.link-edit-post{
+	text-align: right;
+}
+p.link-edit-post a {
+	padding: 10px;
+	min-width: 100px;
+	background: #333671;
+	color: #fff;
+	text-decoration: none;
+}
+
 
 div.article-panel {
     background: #eee;
